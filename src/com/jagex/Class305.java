@@ -19,7 +19,7 @@ public class Class305
 	private static Widget aWidget3849;
 	static int anInt3850;
 	private static long[] aLongArray3851;
-	static int anInt3852;
+	static int chatMessageCounter;
 	static int anInt3853;
 	static int anInt3854;
 	private static String[] aStringArray3855;
@@ -1805,7 +1805,7 @@ public class Class305
 					return;
 				}
 				if (i == 3335) {
-					anIntArray3840[anInt3846++] = Class35.anInt537;
+					anIntArray3840[anInt3846++] = Class35.clientLanguage;
 					return;
 				}
 				if (i == 3336) {
@@ -2734,7 +2734,7 @@ public class Class305
 					return;
 				}
 				if (i == 4104) {
-					aStringArray3855[anInt3841++] = GLToolkit.method1437(17578, Class35.anInt537, Class25.method308(anIntArray3840[--anInt3846], false));
+					aStringArray3855[anInt3841++] = GLToolkit.method1437(17578, Class35.clientLanguage, Class25.method308(anIntArray3840[--anInt3846], false));
 					return;
 				}
 				if (i == 4105) {
@@ -2756,7 +2756,7 @@ public class Class305
 				}
 				if (i == 4107) {
 					anInt3841 -= 2;
-					anIntArray3840[anInt3846++] = r.method2359(aStringArray3855[anInt3841 + 1], (byte) -4, Class35.anInt537, aStringArray3855[anInt3841]);
+					anIntArray3840[anInt3846++] = r.method2359(aStringArray3855[anInt3841 + 1], (byte) -4, Class35.clientLanguage, aStringArray3855[anInt3841]);
 					return;
 				}
 				if (i == 4108) {
@@ -2887,7 +2887,7 @@ public class Class305
 				if (i == 4124) {
 					boolean bool_247_ = anIntArray3840[--anInt3846] != 0;
 					int i_248_ = anIntArray3840[--anInt3846];
-					aStringArray3855[anInt3841++] = Class301.method3503(Class35.anInt537, bool_247_, (long) i_248_, 0, true);
+					aStringArray3855[anInt3841++] = Class301.method3503(Class35.clientLanguage, bool_247_, (long) i_248_, 0, true);
 					return;
 				}
 				if (i == 4125) {
@@ -2898,7 +2898,7 @@ public class Class305
 					return;
 				}
 				if (i == 4126) {
-					aStringArray3855[anInt3841++] = Class350.method3999((long) anIntArray3840[--anInt3846] * 60000L, true, Class35.anInt537, 1) + " UTC";
+					aStringArray3855[anInt3841++] = Class350.method3999((long) anIntArray3840[--anInt3846] * 60000L, true, Class35.clientLanguage, 1) + " UTC";
 					return;
 				}
 				if (i == 4127) {
@@ -3130,9 +3130,9 @@ public class Class305
 							Class144_Sub3.aByte6822 = (byte) -1;
 							Node_Sub13 node_sub13 = FloatBuffer.method2250(-386, Class232.aClass318_2772, Class218.lobbyResponseBuffer.anIsaacCipher1571);
 							node_sub13.aPacket7113.method2226(0, false);
-							int i_282_ = node_sub13.aPacket7113.anInt7002;
+							int i_282_ = node_sub13.aPacket7113.bufferLength;
 							node_sub13.aPacket7113.method2228(string, 85);
-							node_sub13.aPacket7113.method2217(node_sub13.aPacket7113.anInt7002 - i_282_, (byte) -128);
+							node_sub13.aPacket7113.method2217(node_sub13.aPacket7113.bufferLength - i_282_, (byte) -128);
 							Class218.lobbyResponseBuffer.method1514(126, node_sub13);
 							return;
 						}
@@ -3601,7 +3601,7 @@ public class Class305
 			}
 			if (i == 5008) {
 				String string = aStringArray3855[--anInt3841];
-				method3562(string, i);
+				sendChatMessagePacket(string, i);
 				return;
 			}
 			if (i == 5009) {
@@ -3613,10 +3613,10 @@ public class Class305
 					Class123 class123 = Class262_Sub23.method3213((byte) -78);
 					Node_Sub13 node_sub13 = FloatBuffer.method2250(-386, Class133.aClass318_1687, class123.anIsaacCipher1571);
 					node_sub13.aPacket7113.method2210(0, -95);
-					int i_327_ = node_sub13.aPacket7113.anInt7002;
+					int i_327_ = node_sub13.aPacket7113.bufferLength;
 					node_sub13.aPacket7113.method2228(string, 112);
 					Class194_Sub3.method1975(36, node_sub13.aPacket7113, string_326_);
-					node_sub13.aPacket7113.method2194(node_sub13.aPacket7113.anInt7002 - i_327_, -2887);
+					node_sub13.aPacket7113.method2194(node_sub13.aPacket7113.bufferLength - i_327_, -2887);
 					class123.method1514(127, node_sub13);
 					return;
 				}
@@ -3808,11 +3808,11 @@ public class Class305
 				Class123 class123 = Class262_Sub23.method3213((byte) -77);
 				Node_Sub13 node_sub13 = FloatBuffer.method2250(-386, Class245.aClass318_3101, class123.anIsaacCipher1571);
 				node_sub13.aPacket7113.method2226(0, false);
-				int i_352_ = node_sub13.aPacket7113.anInt7002;
+				int i_352_ = node_sub13.aPacket7113.bufferLength;
 				node_sub13.aPacket7113.method2226(0, false);
 				node_sub13.aPacket7113.method2210(aClass16_3856.anInt231, -70);
 				aClass16_3856.aCacheNode_Sub10_229.method2330(node_sub13.aPacket7113, aClass16_3856.anIntArray230, 121);
-				node_sub13.aPacket7113.method2217(node_sub13.aPacket7113.anInt7002 - i_352_, (byte) -128);
+				node_sub13.aPacket7113.method2217(node_sub13.aPacket7113.bufferLength - i_352_, (byte) -128);
 				class123.method1514(127, node_sub13);
 				return;
 			}
@@ -3822,11 +3822,11 @@ public class Class305
 				Class123 class123 = Class262_Sub23.method3213((byte) -127);
 				Node_Sub13 node_sub13 = FloatBuffer.method2250(-386, Class235_Sub1.aClass318_8979, class123.anIsaacCipher1571);
 				node_sub13.aPacket7113.method2226(0, false);
-				int i_353_ = node_sub13.aPacket7113.anInt7002;
+				int i_353_ = node_sub13.aPacket7113.bufferLength;
 				node_sub13.aPacket7113.method2228(string, 116);
 				node_sub13.aPacket7113.method2210(aClass16_3856.anInt231, -26);
 				aClass16_3856.aCacheNode_Sub10_229.method2330(node_sub13.aPacket7113, aClass16_3856.anIntArray230, 126);
-				node_sub13.aPacket7113.method2217(node_sub13.aPacket7113.anInt7002 - i_353_, (byte) -128);
+				node_sub13.aPacket7113.method2217(node_sub13.aPacket7113.bufferLength - i_353_, (byte) -128);
 				class123.method1514(127, node_sub13);
 				return;
 			}
@@ -3835,11 +3835,11 @@ public class Class305
 				Class123 class123 = Class262_Sub23.method3213((byte) -75);
 				Node_Sub13 node_sub13 = FloatBuffer.method2250(-386, Class245.aClass318_3101, class123.anIsaacCipher1571);
 				node_sub13.aPacket7113.method2226(0, false);
-				int i_354_ = node_sub13.aPacket7113.anInt7002;
+				int i_354_ = node_sub13.aPacket7113.bufferLength;
 				node_sub13.aPacket7113.method2226(1, false);
 				node_sub13.aPacket7113.method2210(aClass16_3856.anInt231, -74);
 				aClass16_3856.aCacheNode_Sub10_229.method2330(node_sub13.aPacket7113, aClass16_3856.anIntArray230, 125);
-				node_sub13.aPacket7113.method2217(node_sub13.aPacket7113.anInt7002 - i_354_, (byte) -128);
+				node_sub13.aPacket7113.method2217(node_sub13.aPacket7113.bufferLength - i_354_, (byte) -128);
 				class123.method1514(126, node_sub13);
 				return;
 			}
@@ -3944,11 +3944,11 @@ public class Class305
 				Class123 class123 = Class262_Sub23.method3213((byte) -66);
 				Node_Sub13 node_sub13 = FloatBuffer.method2250(-386, Class245.aClass318_3101, class123.anIsaacCipher1571);
 				node_sub13.aPacket7113.method2226(0, false);
-				int i_375_ = node_sub13.aPacket7113.anInt7002;
+				int i_375_ = node_sub13.aPacket7113.bufferLength;
 				node_sub13.aPacket7113.method2226(2, false);
 				node_sub13.aPacket7113.method2210(aClass16_3856.anInt231, -66);
 				aClass16_3856.aCacheNode_Sub10_229.method2330(node_sub13.aPacket7113, aClass16_3856.anIntArray230, 126);
-				node_sub13.aPacket7113.method2217(node_sub13.aPacket7113.anInt7002 - i_375_, (byte) -128);
+				node_sub13.aPacket7113.method2217(node_sub13.aPacket7113.bufferLength - i_375_, (byte) -128);
 				class123.method1514(127, node_sub13);
 				return;
 			}
@@ -3956,11 +3956,11 @@ public class Class305
 				Class123 class123 = Class262_Sub23.method3213((byte) -122);
 				Node_Sub13 node_sub13 = FloatBuffer.method2250(-386, Class245.aClass318_3101, class123.anIsaacCipher1571);
 				node_sub13.aPacket7113.method2226(0, false);
-				int i_376_ = node_sub13.aPacket7113.anInt7002;
+				int i_376_ = node_sub13.aPacket7113.bufferLength;
 				node_sub13.aPacket7113.method2226(3, false);
 				node_sub13.aPacket7113.method2210(aClass16_3856.anInt231, -97);
 				aClass16_3856.aCacheNode_Sub10_229.method2330(node_sub13.aPacket7113, aClass16_3856.anIntArray230, 125);
-				node_sub13.aPacket7113.method2217(node_sub13.aPacket7113.anInt7002 - i_376_, (byte) -128);
+				node_sub13.aPacket7113.method2217(node_sub13.aPacket7113.bufferLength - i_376_, (byte) -128);
 				class123.method1514(127, node_sub13);
 				return;
 			}
@@ -4985,7 +4985,7 @@ public class Class305
 			}
 			if (i == 6016) {
 				Class213.aNode_Sub27_2512.method2690(96, anIntArray3840[--anInt3846], Class213.aNode_Sub27_2512.aClass320_Sub13_7283);
-				Class22.method300(Class213.aNode_Sub27_2512.aClass320_Sub29_7270.method3791(false), true, false);
+				Localization.method300(Class213.aNode_Sub27_2512.aClass320_Sub29_7270.method3791(false), true, false);
 				Node_Sub38_Sub31.method2893(1);
 				return;
 			}
@@ -5083,7 +5083,7 @@ public class Class305
 				if (i_470_ < 0 || i_470_ > 5) {
 					i_470_ = 2;
 				}
-				Class22.method300(i_470_, true, false);
+				Localization.method300(i_470_, true, false);
 				return;
 			}
 			if (i == 6032) {
@@ -6235,129 +6235,135 @@ public class Class305
 		return string;
 	}
 	
-	private static final void method3562(String string, int i) {
+	private static final void sendChatMessagePacket(String chatMessage, int i) {
 		if (Class339_Sub7.playerPrivilege != 0 || (!Node_Sub38_Sub18.aBoolean10282 || Class24.aBoolean436) && !Class290_Sub11.aBoolean8175) {
-			String string_566_ = string.toLowerCase();
-			int i_567_ = 0;
-			if (string_566_.startsWith(Class22.aClass22_410.method297(-12273, 0))) {
-				i_567_ = 0;
-				string = string.substring(Class22.aClass22_410.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_411.method297(-12273, 0))) {
-				i_567_ = 1;
-				string = string.substring(Class22.aClass22_411.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_412.method297(-12273, 0))) {
-				i_567_ = 2;
-				string = string.substring(Class22.aClass22_412.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_413.method297(-12273, 0))) {
-				i_567_ = 3;
-				string = string.substring(Class22.aClass22_413.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_414.method297(-12273, 0))) {
-				i_567_ = 4;
-				string = string.substring(Class22.aClass22_414.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_415.method297(-12273, 0))) {
-				i_567_ = 5;
-				string = string.substring(Class22.aClass22_415.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_416.method297(-12273, 0))) {
-				i_567_ = 6;
-				string = string.substring(Class22.aClass22_416.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_417.method297(-12273, 0))) {
-				i_567_ = 7;
-				string = string.substring(Class22.aClass22_417.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_418.method297(-12273, 0))) {
-				i_567_ = 8;
-				string = string.substring(Class22.aClass22_418.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_419.method297(-12273, 0))) {
-				i_567_ = 9;
-				string = string.substring(Class22.aClass22_419.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_420.method297(-12273, 0))) {
-				i_567_ = 10;
-				string = string.substring(Class22.aClass22_420.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_421.method297(-12273, 0))) {
-				i_567_ = 11;
-				string = string.substring(Class22.aClass22_421.method297(-12273, 0).length());
-			} else if (Class35.anInt537 != 0) {
-				if (string_566_.startsWith(Class22.aClass22_410.method297(-12273, Class35.anInt537))) {
-					i_567_ = 0;
-					string = string.substring(Class22.aClass22_410.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_411.method297(-12273, Class35.anInt537))) {
-					i_567_ = 1;
-					string = string.substring(Class22.aClass22_411.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_412.method297(-12273, Class35.anInt537))) {
-					i_567_ = 2;
-					string = string.substring(Class22.aClass22_412.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_413.method297(-12273, Class35.anInt537))) {
-					i_567_ = 3;
-					string = string.substring(Class22.aClass22_413.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_414.method297(-12273, Class35.anInt537))) {
-					i_567_ = 4;
-					string = string.substring(Class22.aClass22_414.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_415.method297(-12273, Class35.anInt537))) {
-					i_567_ = 5;
-					string = string.substring(Class22.aClass22_415.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_416.method297(-12273, Class35.anInt537))) {
-					i_567_ = 6;
-					string = string.substring(Class22.aClass22_416.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_417.method297(-12273, Class35.anInt537))) {
-					i_567_ = 7;
-					string = string.substring(Class22.aClass22_417.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_418.method297(-12273, Class35.anInt537))) {
-					i_567_ = 8;
-					string = string.substring(Class22.aClass22_418.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_419.method297(-12273, Class35.anInt537))) {
-					i_567_ = 9;
-					string = string.substring(Class22.aClass22_419.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_420.method297(-12273, Class35.anInt537))) {
-					i_567_ = 10;
-					string = string.substring(Class22.aClass22_420.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_421.method297(-12273, Class35.anInt537))) {
-					i_567_ = 11;
-					string = string.substring(Class22.aClass22_421.method297(-12273, Class35.anInt537).length());
+
+			// Checking for localized color strings at the start of the message
+			// Checks for english before trying the client language
+			String chatMessageLowerCase = chatMessage.toLowerCase();
+			int chatMessageColorId = 0;
+			if (chatMessageLowerCase.startsWith(Localization.textEffectYellow.getLocalizationString(-12273, 0))) {
+				chatMessageColorId = 0;
+				chatMessage = chatMessage.substring(Localization.textEffectYellow.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectRed.getLocalizationString(-12273, 0))) {
+				chatMessageColorId = 1;
+				chatMessage = chatMessage.substring(Localization.textEffectRed.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectGreen.getLocalizationString(-12273, 0))) {
+				chatMessageColorId = 2;
+				chatMessage = chatMessage.substring(Localization.textEffectGreen.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectCyan.getLocalizationString(-12273, 0))) {
+				chatMessageColorId = 3;
+				chatMessage = chatMessage.substring(Localization.textEffectCyan.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectPurple.getLocalizationString(-12273, 0))) {
+				chatMessageColorId = 4;
+				chatMessage = chatMessage.substring(Localization.textEffectPurple.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectWhite.getLocalizationString(-12273, 0))) {
+				chatMessageColorId = 5;
+				chatMessage = chatMessage.substring(Localization.textEffectWhite.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectflash1.getLocalizationString(-12273, 0))) {
+				chatMessageColorId = 6;
+				chatMessage = chatMessage.substring(Localization.textEffectflash1.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectFlash2.getLocalizationString(-12273, 0))) {
+				chatMessageColorId = 7;
+				chatMessage = chatMessage.substring(Localization.textEffectFlash2.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectFlash3.getLocalizationString(-12273, 0))) {
+				chatMessageColorId = 8;
+				chatMessage = chatMessage.substring(Localization.textEffectFlash3.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectGlow1.getLocalizationString(-12273, 0))) {
+				chatMessageColorId = 9;
+				chatMessage = chatMessage.substring(Localization.textEffectGlow1.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectGlow2.getLocalizationString(-12273, 0))) {
+				chatMessageColorId = 10;
+				chatMessage = chatMessage.substring(Localization.textEffectGlow2.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectGlow3.getLocalizationString(-12273, 0))) {
+				chatMessageColorId = 11;
+				chatMessage = chatMessage.substring(Localization.textEffectGlow3.getLocalizationString(-12273, 0).length());
+			} else if (Class35.clientLanguage != 0) {
+				if (chatMessageLowerCase.startsWith(Localization.textEffectYellow.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageColorId = 0;
+					chatMessage = chatMessage.substring(Localization.textEffectYellow.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectRed.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageColorId = 1;
+					chatMessage = chatMessage.substring(Localization.textEffectRed.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectGreen.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageColorId = 2;
+					chatMessage = chatMessage.substring(Localization.textEffectGreen.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectCyan.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageColorId = 3;
+					chatMessage = chatMessage.substring(Localization.textEffectCyan.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectPurple.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageColorId = 4;
+					chatMessage = chatMessage.substring(Localization.textEffectPurple.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectWhite.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageColorId = 5;
+					chatMessage = chatMessage.substring(Localization.textEffectWhite.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectflash1.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageColorId = 6;
+					chatMessage = chatMessage.substring(Localization.textEffectflash1.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectFlash2.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageColorId = 7;
+					chatMessage = chatMessage.substring(Localization.textEffectFlash2.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectFlash3.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageColorId = 8;
+					chatMessage = chatMessage.substring(Localization.textEffectFlash3.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectGlow1.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageColorId = 9;
+					chatMessage = chatMessage.substring(Localization.textEffectGlow1.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectGlow2.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageColorId = 10;
+					chatMessage = chatMessage.substring(Localization.textEffectGlow2.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectGlow3.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageColorId = 11;
+					chatMessage = chatMessage.substring(Localization.textEffectGlow3.getLocalizationString(-12273, Class35.clientLanguage).length());
 				}
 			}
-			string_566_ = string.toLowerCase();
-			int i_568_ = 0;
-			if (string_566_.startsWith(Class22.aClass22_422.method297(-12273, 0))) {
-				i_568_ = 1;
-				string = string.substring(Class22.aClass22_422.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_423.method297(-12273, 0))) {
-				i_568_ = 2;
-				string = string.substring(Class22.aClass22_423.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_424.method297(-12273, 0))) {
-				i_568_ = 3;
-				string = string.substring(Class22.aClass22_424.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_425.method297(-12273, 0))) {
-				i_568_ = 4;
-				string = string.substring(Class22.aClass22_425.method297(-12273, 0).length());
-			} else if (string_566_.startsWith(Class22.aClass22_426.method297(-12273, 0))) {
-				i_568_ = 5;
-				string = string.substring(Class22.aClass22_426.method297(-12273, 0).length());
-			} else if (Class35.anInt537 != 0) {
-				if (string_566_.startsWith(Class22.aClass22_422.method297(-12273, Class35.anInt537))) {
-					i_568_ = 1;
-					string = string.substring(Class22.aClass22_422.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_423.method297(-12273, Class35.anInt537))) {
-					i_568_ = 2;
-					string = string.substring(Class22.aClass22_423.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_424.method297(-12273, Class35.anInt537))) {
-					i_568_ = 3;
-					string = string.substring(Class22.aClass22_424.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_425.method297(-12273, Class35.anInt537))) {
-					i_568_ = 4;
-					string = string.substring(Class22.aClass22_425.method297(-12273, Class35.anInt537).length());
-				} else if (string_566_.startsWith(Class22.aClass22_426.method297(-12273, Class35.anInt537))) {
-					i_568_ = 5;
-					string = string.substring(Class22.aClass22_426.method297(-12273, Class35.anInt537).length());
+
+			// Checking for localized effect strings at the start of the message
+			// Checks for english before trying the client language
+			chatMessageLowerCase = chatMessage.toLowerCase();
+			int chatMessageEffectId = 0;
+			if (chatMessageLowerCase.startsWith(Localization.textEffectWave.getLocalizationString(-12273, 0))) {
+				chatMessageEffectId = 1;
+				chatMessage = chatMessage.substring(Localization.textEffectWave.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectWave2.getLocalizationString(-12273, 0))) {
+				chatMessageEffectId = 2;
+				chatMessage = chatMessage.substring(Localization.textEffectWave2.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectShake.getLocalizationString(-12273, 0))) {
+				chatMessageEffectId = 3;
+				chatMessage = chatMessage.substring(Localization.textEffectShake.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectScroll.getLocalizationString(-12273, 0))) {
+				chatMessageEffectId = 4;
+				chatMessage = chatMessage.substring(Localization.textEffectScroll.getLocalizationString(-12273, 0).length());
+			} else if (chatMessageLowerCase.startsWith(Localization.textEffectSlide.getLocalizationString(-12273, 0))) {
+				chatMessageEffectId = 5;
+				chatMessage = chatMessage.substring(Localization.textEffectSlide.getLocalizationString(-12273, 0).length());
+			} else if (Class35.clientLanguage != 0) {
+				if (chatMessageLowerCase.startsWith(Localization.textEffectWave.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageEffectId = 1;
+					chatMessage = chatMessage.substring(Localization.textEffectWave.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectWave2.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageEffectId = 2;
+					chatMessage = chatMessage.substring(Localization.textEffectWave2.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectShake.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageEffectId = 3;
+					chatMessage = chatMessage.substring(Localization.textEffectShake.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectScroll.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageEffectId = 4;
+					chatMessage = chatMessage.substring(Localization.textEffectScroll.getLocalizationString(-12273, Class35.clientLanguage).length());
+				} else if (chatMessageLowerCase.startsWith(Localization.textEffectSlide.getLocalizationString(-12273, Class35.clientLanguage))) {
+					chatMessageEffectId = 5;
+					chatMessage = chatMessage.substring(Localization.textEffectSlide.getLocalizationString(-12273, Class35.clientLanguage).length());
 				}
 			}
-			anInt3852++;
+			chatMessageCounter++;
 			Class123 class123 = Class262_Sub23.method3213((byte) -110);
 			Node_Sub13 node_sub13 = FloatBuffer.method2250(-386, Node_Sub38_Sub11.aClass318_10221, class123.anIsaacCipher1571);
 			node_sub13.aPacket7113.method2226(0, false);
-			int i_569_ = node_sub13.aPacket7113.anInt7002;
-			node_sub13.aPacket7113.method2226(i_567_, false);
-			node_sub13.aPacket7113.method2226(i_568_, false);
-			Class194_Sub3.method1975(56, node_sub13.aPacket7113, string);
-			node_sub13.aPacket7113.method2217(node_sub13.aPacket7113.anInt7002 - i_569_, (byte) -128);
+			int i_569_ = node_sub13.aPacket7113.bufferLength;
+			node_sub13.aPacket7113.method2226(chatMessageColorId, false);
+			node_sub13.aPacket7113.method2226(chatMessageEffectId, false);
+			Class194_Sub3.method1975(56, node_sub13.aPacket7113, chatMessage);
+			node_sub13.aPacket7113.method2217(node_sub13.aPacket7113.bufferLength - i_569_, (byte) -128);
 			class123.method1514(127, node_sub13);
 		}
 	}
